@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30° Compleanno // imgios-2026.10.18</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastel: {
+                            bg: '#F8FAFC',          /* Very light Slate/Cream background */
+                            card: '#FFFFFF',        /* Clean white card background */
+                            border: '#E2E8F0',      /* Soft border */
+                            subtle: '#F1F5F9',      /* Subtle background highlight */
+                            blue: '#60A5FA',        /* Soft Pastel Blue */
+                            blueBg: '#EFF6FF',      /* Light Blue Tint */
+                            mint: '#34D399',        /* Pastel Mint Green */
+                            mintBg: '#ECFDF5',      /* Light Mint Tint */
+                            indigo: '#818CF8',      /* Pastel Soft Indigo */
+                            indigoBg: '#EEF2FF',    /* Light Indigo Tint */
+                            slate: '#475569',      /* Primary dark slate text */
+                            muted: '#94A3B8',      /* Muted secondary text */
+                            dark: '#0F172A'        /* Strong heading text */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"Fira Code"', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8FAFC;
+            color: #475569;
+        }
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 30px -10px rgba(148, 163, 184, 0.25);
+        }
+    </style>
+</head>
+<body class="min-h-full flex flex-col justify-center items-center p-4 sm:p-8 relative overflow-x-hidden selection:bg-pastel-blueBg selection:text-pastel-dark">
+
+    <!-- Soft Pastel Glowing Background Orbs -->
+    <div class="fixed -top-32 -left-32 w-96 h-96 rounded-full bg-blue-100/60 blur-3xl pointer-events-none"></div>
+    <div class="fixed -bottom-32 -right-32 w-96 h-96 rounded-full bg-emerald-100/60 blur-3xl pointer-events-none"></div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="w-full max-w-lg mx-auto my-auto relative z-10">
+        
+        <!-- MAIN CARD -->
+        <div class="bg-pastel-card border border-pastel-border rounded-3xl p-6 sm:p-9 soft-shadow relative overflow-hidden">
+            
+            <!-- SUBTLE TECH HEADER TAG -->
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-pastel-border/80 text-xs font-mono">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+                    <span class="text-pastel-slate font-medium">imgios-2026.10.18</span>
+                    <span class="text-pastel-muted">// status: scheduled</span>
+                </div>
+                <span class="px-2.5 py-1 rounded-md bg-pastel-blueBg text-blue-600 font-semibold text-[11px] border border-blue-100">
+                   Release Scheduled
+                </span>
+            </div>
+
+            <!-- EVENT TITLE -->
+            <div class="text-center mb-8">
+                <p class="text-xs font-mono uppercase tracking-widest text-pastel-muted mb-1.5">&lt;release-party&gt;</p>
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-pastel-dark mb-3">
+                    30° Compleanno
+                </h1>
+                <p class="text-pastel-slate text-sm max-w-xs mx-auto leading-relaxed">
+                    Unisciti a me per festeggiare questo nuovo traguardo. Sarà un'ottima occasione per stare insieme! 🎉
+                </p>
+            </div>
+
+            <!-- LIVE COUNTDOWN TIMER -->
+            <div class="mb-8 p-4 sm:p-5 rounded-2xl bg-pastel-subtle border border-pastel-border/60">
+                <div class="flex items-center justify-between mb-3 text-[11px] font-mono text-pastel-muted">
+                    <span>// COUNTDOWN</span>
+                    <span class="text-pastel-slate font-medium">18 Ottobre 2026 - 22:00 CET</span>
+                </div>
+                <div class="grid grid-cols-4 gap-2 text-center font-mono" id="countdown">
+                    <div class="bg-white p-2.5 rounded-xl border border-pastel-border shadow-sm">
+                        <span id="cd-days" class="block text-xl sm:text-2xl font-bold text-pastel-dark">--</span>
+                        <span class="text-[10px] text-pastel-muted uppercase">Giorni</span>
+                    </div>
+                    <div class="bg-white p-2.5 rounded-xl border border-pastel-border shadow-sm">
+                        <span id="cd-hours" class="block text-xl sm:text-2xl font-bold text-pastel-dark">--</span>
+                        <span class="text-[10px] text-pastel-muted uppercase">Ore</span>
+                    </div>
+                    <div class="bg-white p-2.5 rounded-xl border border-pastel-border shadow-sm">
+                        <span id="cd-mins" class="block text-xl sm:text-2xl font-bold text-pastel-dark">--</span>
+                        <span class="text-[10px] text-pastel-muted uppercase">Min</span>
+                    </div>
+                    <div class="bg-white p-2.5 rounded-xl border border-pastel-border shadow-sm">
+                        <span id="cd-secs" class="block text-xl sm:text-2xl font-bold text-pastel-dark">--</span>
+                        <span class="text-[10px] text-pastel-muted uppercase">Sec</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVENT DETAILS -->
+            <div class="space-y-3 mb-8">
+                
+                <!-- Date item -->
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-pastel-subtle/70 border border-pastel-border/60">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-pastel-indigoBg text-indigo-500 flex items-center justify-center font-mono text-xs font-bold border border-indigo-100 shrink-0">
+                            OCT
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-mono text-pastel-muted uppercase block">Data</span>
+                            <span class="text-sm font-semibold text-pastel-dark">Domenica 18 Ottobre 2026 - 22:00 CET</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location item -->
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-pastel-subtle/70 border border-pastel-border/60">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-pastel-blueBg text-blue-500 flex items-center justify-center font-mono text-xs font-bold border border-blue-100 shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-mono text-pastel-muted uppercase block">Location</span>
+                            <span class="text-sm font-semibold text-pastel-dark">The Kocsi</span>
+                        </div>
+                    </div>
+                    <a href="https://maps.app.goo.gl/5TDFNbjvLRFfA55t5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-pastel-dark hover:bg-slate-800 text-white font-medium text-xs font-mono transition-all shadow-sm">
+                        <span>Posizione</span>
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- RSVP SECTION -->
+            <div class="pt-6 border-t border-pastel-border">
+                <div class="text-center mb-4">
+                    <span class="text-xs font-mono text-pastel-slate uppercase font-semibold tracking-wider">// CONFERMA PRESENZA (RSVP)</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                    <!-- WhatsApp button -->
+                    <a href="https://wa.me/393518811334?text=Ciao!%20Confermo%20la%20mia%20presenza%20per%20il%20tuo%2030%C2%B0%20compleanno!%20%F0%9F%8E%89" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100/80 text-emerald-700 border border-emerald-200/80 text-xs sm:text-sm font-medium transition-all group">
+                        <svg class="w-4 h-4 fill-current group-hover:scale-105 transition-transform" viewBox="0 0 24 24">
+                            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.486 1.332 5.003l-1.416 5.166 5.297-1.385c1.46.793 3.109 1.21 4.773 1.211h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.666-1.037-5.172-2.923-7.058a9.923 9.923 0 0 0-7.066-2.936zm.003 18.232h-.003a8.28 8.28 0 0 1-4.22-1.157l-.303-.18-3.136.821.836-3.053-.197-.314a8.262 8.262 0 0 1-1.267-4.364c0-4.568 3.718-8.284 8.288-8.284 2.213 0 4.293.862 5.858 2.428a8.228 8.228 0 0 1 2.426 5.856c-.002 4.569-3.72 8.287-8.282 8.287z"/>
+                        </svg>
+                        <span>WhatsApp</span>
+                    </a>
+
+                    <!-- Telegram button -->
+                    <a href="https://t.me/imgios?text=Ciao!%20Confermo%20la%20mia%20presenza%20per%20il%20tuo%2030%C2%B0%20compleanno!%20%F0%9F%8E%89" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-sky-50 hover:bg-sky-100/80 text-sky-700 border border-sky-200/80 text-xs sm:text-sm font-medium transition-all group">
+                        <svg class="w-4 h-4 fill-current group-hover:scale-105 transition-transform" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.259.259-.536.259l.192-3.05 5.556-5.024c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.832.943z"/>
+                        </svg>
+                        <span>Telegram</span>
+                    </a>
+                </div>
+
+                <!-- Contact note -->
+                <p class="text-[11px] text-pastel-muted text-center leading-relaxed">
+                    💡 Siete pregati di confermare entro il 17 Ottobre 2026, 10:00 CET.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER TAG -->
+        <p class="text-center text-xs font-mono text-pastel-muted mt-6">
+            &lt;/30yo-birthday-event&gt;
+        </p>
+
+    </main>
+
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date('October 18, 2026 22:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = eventDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('cd-days').innerText = days < 10 ? '0' + days : days;
+                document.getElementById('cd-hours').innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById('cd-mins').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('cd-secs').innerText = seconds < 10 ? '0' + seconds : seconds;
+            } else {
+                document.getElementById('countdown').innerHTML = `<p class="col-span-4 font-semibold text-pastel-dark py-2">Festa in corso! 🎉</p>`;
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
